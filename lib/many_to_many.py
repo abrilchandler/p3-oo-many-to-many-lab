@@ -65,7 +65,11 @@ class Contract:
         author.add_contracts(self)
 
     @classmethod
-    def get_all_contracts(self):
-        return self.all_contracts
+    def get_all_contracts(cls):
+        return cls.all_contracts
     
+    @classmethod
+    def contracts_by_date(cls, date):
+        return sorted(cls.all_contracts, key=lambda contract: contract.date)
+
    
